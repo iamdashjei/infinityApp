@@ -16,7 +16,8 @@ import { ImageUploadComponent } from '../../components/image-upload/image-upload
     AccordionBoilerComponent,
     AccordionEshComponent,
     AccordionEshBoilerComponent,
-    AccordionCavitySolidWallComponent
+    AccordionCavitySolidWallComponent,
+    ImageUploadComponent
   ],
   imports: [
     IonicPageModule.forChild(SurveyorFormPage),

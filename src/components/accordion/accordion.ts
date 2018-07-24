@@ -25,7 +25,7 @@ export class AccordionComponent  implements OnInit{
     this.renderer.setElementStyle(this.genFormContent.nativeElement, "webkitTransition", "max-height 1200ms, padding 500ms");
   }
 
-  // Toggle Accordion setting max heigh and padding when toggled
+  // Toggle Accordion setting max height and padding when toggled
   toggleAccordion() {
     if(this.accordionExpanded){
       this.renderer.setElementStyle(this.genFormContent.nativeElement, "max-height", "0px");

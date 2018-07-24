@@ -10,7 +10,7 @@ import { Component, ViewChild, OnInit, Renderer, Input  } from '@angular/core';
   selector: 'image-upload',
   templateUrl: 'image-upload.html'
 })
-export class ImageUploadComponent {
+export class ImageUploadComponent implements OnInit{
 
   accordionExpanded = false;
 
