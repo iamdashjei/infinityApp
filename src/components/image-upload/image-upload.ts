@@ -1,4 +1,9 @@
 import { Component, ViewChild, OnInit, Renderer, Input  } from '@angular/core';
+import { storage, initializeApp } from 'firebase';
+import { FIREBASE_CONFIG } from "../../app/firebase.config";
+import { Camera, CameraOptions  } from '@ionic-native/camera';
+import { AngularFireStorage, AngularFireUpladTask } from 'angularfire2/storage';
+
 
 /**
  * Generated class for the ImageUploadComponent component.
@@ -11,6 +16,9 @@ import { Component, ViewChild, OnInit, Renderer, Input  } from '@angular/core';
   templateUrl: 'image-upload.html'
 })
 export class ImageUploadComponent implements OnInit{
+  task: AngularFireUploadTask;
+  progress: any;
+  image: string;
 
   accordionExpanded = false;
 
@@ -19,7 +27,9 @@ export class ImageUploadComponent implements OnInit{
 
   icon: string = "arrow-forward";
 
-  constructor(public renderer: Renderer) {}
+  constructor(public renderer: Renderer, private camera: Camera, public storage: AngularFireStorage) {
+    initializeApp(FIREBASE_CONFIG);
+  }
 
   ngOnInit(){
     console.log(this.imageuploadFormContent.nativeElement);
@@ -37,6 +47,45 @@ export class ImageUploadComponent implements OnInit{
 
     this.accordionExpanded = !this.accordionExpanded;
     this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
+  }
+
+  // async takePhoto() {
+  //   // Camera Options
+  //   try {
+  //   const options: CameraOptions = {
+  //     quality: 50,
+  //     destinationType: this.camera.DestinationType.DATA_URL,
+  //     encodingType: this.camera.EncodingType.JPEG,
+  //     mediaType: this.camera.MediaType.PICTURE
+  //   }
+  //
+  //   const result = await this.camera.getPicture(options);
+  //   const image = `data:image/jpeg;base64,${result}`;
+  //   const pictures = storage().ref('pictures/myPhoto_slug' + Math.floor(new Date().getTime()/1000));
+  //   pictures.putString(image, 'data_url');
+  // } catch (e) {
+  //   console.error(e);
+  // }
+  //
+  // }
+
+  uploadPhoto() {
+    // Upload Options
+  }
+
+  createUploadTask(file: string) : void {
+    // Create Upload Task and a Progressbar
+
+    const filePath = 'mysample_${ new Date().getTime()}.jpg';
+
+    this.image = 'data:image/jpg;base64,' + file;
+    this.task = this.storage.ref(filePath).putString(this.image, 'data_url');
+    this.progress = this.task.percentageChanges();
+  }
+
+  async uploadHandler(){
+    const base64 = await this.captureImage();
+    this.createUploadTask(base64);
   }
 
 }
