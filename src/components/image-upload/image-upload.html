@@ -26,8 +26,17 @@
     <button ion-button (click)="takePhoto()">Take Photo</button>
     <button ion-button (click)="uploadPhoto()">Upload Photo</button> -->
 
-    <img *ngIf="image" [src]="image">
+    <div *ngIf="currentFileUpload" class="progress" style="width:400px">
+      <div class="progress-bar progress-bar-info progress-bar-striped"
+        role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+          aria-valuemin="0" aria-valuemax="100"
+          [ngStyle]="{width:progress.percentage+'%'}">
+          {{progress.percentage}}%</div>
+    </div>
 
-    <button ion-button (tap)="uploadHandler()">Upload Image</button>
+    <label class="btn btn-default"> <input type="file" (change)="selectFile($event)"></label>
+
+    <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+
   </ion-card-content>
 </ion-card>

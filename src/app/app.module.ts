@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
 import { Camera  } from '@ionic-native/camera';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { UploadFileServiceProvider } from '../providers/upload-file-service/upload-file-service';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    RestProvider,
+    UploadFileServiceProvider
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
