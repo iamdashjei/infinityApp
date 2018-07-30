@@ -1,8 +1,6 @@
 import { Component, ViewChild, OnInit, Renderer, Input  } from '@angular/core';
-import { storage, initializeApp } from 'firebase';
-import { FIREBASE_CONFIG } from "../../app/firebase.config";
-import { Camera, CameraOptions  } from '@ionic-native/camera';
-
+import { UploadFileServiceProvider } from '../../providers/upload-file-service/upload-file-service';
+import { FileUpload } from '../../providers/upload-file-service/fileupload';
 
 /**
  * Generated class for the ImageUploadComponent component.
@@ -15,6 +13,9 @@ import { Camera, CameraOptions  } from '@ionic-native/camera';
   templateUrl: 'image-upload.html'
 })
 export class ImageUploadComponent implements OnInit{
+  selectedFiles: FileList;
+  currentFileUpload: FileUpload;
+  progress: {percentage: number} = {percentage: 0};
 
   accordionExpanded = false;
 
@@ -23,13 +24,11 @@ export class ImageUploadComponent implements OnInit{
 
   icon: string = "arrow-forward";
 
-  constructor(public renderer: Renderer) {
-    initializeApp(FIREBASE_CONFIG);
-  }
+  constructor(public renderer: Renderer,  private uploadService: UploadFileServiceProvider) {}
 
   ngOnInit(){
     console.log(this.imageuploadFormContent.nativeElement);
-    this.renderer.setElementStyle(this.imageuploadFormContent.nativeElement, "webkitTransition", "max-height 1200ms, padding 500ms");
+    this.renderer.setElementStyle(this.imageuploadFormContent.nativeElement, "webkitTransition", "max-height 3200ms, padding 500ms");
   }
 
   toggleAccordionImageUpload() {
@@ -37,12 +36,23 @@ export class ImageUploadComponent implements OnInit{
       this.renderer.setElementStyle(this.imageuploadFormContent.nativeElement, "max-height", "0px");
       this.renderer.setElementStyle(this.imageuploadFormContent.nativeElement, "padding", "0px 16px");
     } else {
-      this.renderer.setElementStyle(this.imageuploadFormContent.nativeElement, "max-height", "1200px");
+      this.renderer.setElementStyle(this.imageuploadFormContent.nativeElement, "max-height", "3200px");
       this.renderer.setElementStyle(this.imageuploadFormContent.nativeElement, "padding", "13px 16px");
     }
 
     this.accordionExpanded = !this.accordionExpanded;
     this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
+  }
+
+
+  selectFile(event){
+        this.selectedFiles = event.target.files;
+  }
+
+  upload(){
+    const file = this.selectedFiles.item(0);
+    this.currentFileUpload = new FileUpload(file);
+    this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
   }
 
 

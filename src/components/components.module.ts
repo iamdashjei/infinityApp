@@ -7,6 +7,7 @@ import { AccordionEshComponent } from './accordion-esh/accordion-esh';
 import { AccordionEshBoilerComponent } from './accordion-esh-boiler/accordion-esh-boiler';
 import { AccordionCavitySolidWallComponent } from './accordion-cavity-solid-wall/accordion-cavity-solid-wall';
 import { ImageUploadComponent } from './image-upload/image-upload';
+import { ImageUploadSurveyorComponent } from './image-upload-surveyor/image-upload-surveyor';
 @NgModule({
 	declarations: [ProgressBarComponent,
     AccordionComponent,
@@ -15,7 +16,8 @@ import { ImageUploadComponent } from './image-upload/image-upload';
     AccordionEshComponent,
     AccordionEshBoilerComponent,
     AccordionCavitySolidWallComponent,
-    ImageUploadComponent],
+    ImageUploadComponent,
+    ImageUploadSurveyorComponent],
 	imports: [],
 	exports: [ProgressBarComponent,
     AccordionComponent,
@@ -24,6 +26,7 @@ import { ImageUploadComponent } from './image-upload/image-upload';
     AccordionEshComponent,
     AccordionEshBoilerComponent,
     AccordionCavitySolidWallComponent,
-    ImageUploadComponent]
+    ImageUploadComponent,
+    ImageUploadSurveyorComponent]
 })
 export class ComponentsModule {}

@@ -11,8 +11,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
+
 import { Camera  } from '@ionic-native/camera';
-import { AngularFireStorageModule } from 'angularfire2/storage';
+import { FIREBASE_CONFIG } from "./firebase.config";
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { UploadFileServiceProvider } from '../providers/upload-file-service/upload-file-service';
 
 
@@ -25,7 +28,8 @@ import { UploadFileServiceProvider } from '../providers/upload-file-service/uplo
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    AngularFireStorageModule,
+    AngularFireModule.initializeApp(FIREBASE_CONFIG.firebase),
+    AngularFireDatabaseModule,
     IonicModule.forRoot(MyApp),
 
   ],
