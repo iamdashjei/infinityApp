@@ -8,6 +8,7 @@ import { AccordionEshComponent } from '../../components/accordion-esh/accordion-
 import { AccordionEshBoilerComponent } from '../../components/accordion-esh-boiler/accordion-esh-boiler';
 import { AccordionCavitySolidWallComponent } from '../../components/accordion-cavity-solid-wall/accordion-cavity-solid-wall';
 import { ImageUploadComponent } from '../../components/image-upload/image-upload';
+import { ImageUploadSurveyorComponent }  from '../../components/image-upload-surveyor/image-upload-surveyor';
 @NgModule({
   declarations: [
     SurveyorFormPage,
@@ -17,7 +18,8 @@ import { ImageUploadComponent } from '../../components/image-upload/image-upload
     AccordionEshComponent,
     AccordionEshBoilerComponent,
     AccordionCavitySolidWallComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    ImageUploadSurveyorComponent
   ],
   imports: [
     IonicPageModule.forChild(SurveyorFormPage),
