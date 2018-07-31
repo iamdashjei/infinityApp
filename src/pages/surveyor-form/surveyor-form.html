@@ -29,5 +29,8 @@
   <accordion-esh-boiler title="Electric Storage Heater and Boiler Replacement Measures">Electric Storage Heater and Boiler Replacement Measures</accordion-esh-boiler>
   <accordion-cavity-solid-wall title="Cavity and Solid Wall Insulation">Cavity and Solid Wall Insulation</accordion-cavity-solid-wall>
   <image-upload title="Cavity and Solid Insulation Uploads">Cavity and Solid Insulation Uploads</image-upload>
-
+  <button ion-button full (click)="openSignatureModel()">
+    Open Signature
+  </button>
+  <div><img [src]="signatureImage" *ngIf="signatureImage" /></div>
 </ion-content>

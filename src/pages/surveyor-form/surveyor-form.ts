@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { SignaturePage } from '../signature/signature';
 /**
  * Generated class for the SurveyorFormPage page.
  *
@@ -14,11 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'surveyor-form.html',
 })
 export class SurveyorFormPage{
+  public signatureImage: any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalController: ModalController) {
+    this.signatureImage = navParams.get('signatureImage');
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() { console.log('ionViewDidLoad SurveyorFormPage'); }
+  openSignatureModel(){
+    setTimeout(() => {
+       let modal = this.modalController.create(SignaturePage);
+    modal.present();
+    }, 300);
+  }
 
 
 }

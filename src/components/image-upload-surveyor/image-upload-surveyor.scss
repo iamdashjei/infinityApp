@@ -28,4 +28,14 @@ image-upload-surveyor {
       border-radius: 10px;
       background-color: map-get($colors, primary);
   }
+
+  .drawing-active {
+     background: #d6fffc;
+  }
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+  }
 }

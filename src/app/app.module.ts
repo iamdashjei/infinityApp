@@ -18,11 +18,16 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { UploadFileServiceProvider } from '../providers/upload-file-service/upload-file-service';
 
+import { SignaturePadModule } from 'angular2-signaturepad';
+import { SignaturePage } from '../pages/signature/signature';
+
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    SignaturePage
   ],
   imports: [
     BrowserModule,
@@ -31,12 +36,13 @@ import { UploadFileServiceProvider } from '../providers/upload-file-service/uplo
     AngularFireModule.initializeApp(FIREBASE_CONFIG.firebase),
     AngularFireDatabaseModule,
     IonicModule.forRoot(MyApp),
-
+    SignaturePadModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SignaturePage
   ],
   providers: [
     StatusBar,

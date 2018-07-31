@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit, Renderer, Input  } from '@angular/core';
 import { UploadFileServiceProvider } from '../../providers/upload-file-service/upload-file-service';
 import { FileUpload } from '../../providers/upload-file-service/fileupload';
-
+import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 /**
  * Generated class for the ImageUploadSurveyorComponent component.
  *
@@ -13,20 +13,43 @@ import { FileUpload } from '../../providers/upload-file-service/fileupload';
   templateUrl: 'image-upload-surveyor.html'
 })
 export class ImageUploadSurveyorComponent implements OnInit{
-  selectedFiles: FileList;
-  currentFileUpload: FileUpload;
-  progress: {percentage: number} = {percentage: 0};
 
-  accordionExpanded = false;
-
-  public  anArray: any=[];
-
+  @ViewChild(SignaturePad) signaturePad: SignaturePad;
   @ViewChild("surveyorForms") surveyorFormContent: any;
   @Input('title') title: string;
+
+  public  anArray: any=[];
+  public signaturePadOptions: Object = {
+  'minWidth': 2,
+  'canvasWidth': 400,
+  'canvasHeight': 200,
+  'backgroundColor': '#f6fbff',
+  'penColor': '#666a73'
+   };
+
+   selectedFiles: FileList;
+   currentFileUpload: FileUpload;
+   progress: {percentage: number} = {percentage: 0};
+   data = false;
+   accordionExpanded = false;
+   signature = '';
+   isDrawing = false;
 
   icon: string = "arrow-forward";
 
   constructor(public renderer: Renderer,  private uploadService: UploadFileServiceProvider) {}
+
+  drawComplete() {
+   this.isDrawing = false;
+  }
+
+  drawStart() {
+   this.isDrawing = true;
+  }
+
+  clearPad() {
+    this.signaturePad.clear();
+  }
 
   ngOnInit(){
     console.log(this.surveyorFormContent.nativeElement);
@@ -64,5 +87,6 @@ export class ImageUploadSurveyorComponent implements OnInit{
   Add(){
     this.anArray.push({'value':''});
   }
+
 
 }
