@@ -21,7 +21,12 @@ export class LoftImageUploadComponent implements OnInit{
 
     selectedFiles: FileList;
     currentFileUpload: FileUpload;
-    progress: {percentage: number} = {percentage: 0};
+    progressUBILLoft: {percentage: number} = {percentage: 0};
+    progressCustomerSignature: {percentage: number} = {percentage: 0};
+    progressFloorPlan: {percentage: number} = {percentage: 0};
+    progressTenancyAgreement: {percentage: number} = {percentage: 0};
+    progressLandLordPerm: {percentage: number} = {percentage: 0};
+
     data = false;
     accordionExpanded = false;
     signature = '';
@@ -54,7 +59,7 @@ export class LoftImageUploadComponent implements OnInit{
           this.selectedFiles = event.target.files;
     }
 
-    uploadLoftSurveyor(){
+    uploadLoftSurveyor(input: string){
       const file = this.selectedFiles.item(0);
       this.currentFileUpload = new FileUpload(file);
       this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);

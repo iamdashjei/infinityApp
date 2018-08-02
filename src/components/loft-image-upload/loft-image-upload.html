@@ -18,10 +18,10 @@
        <ion-col>
          <div class="progress" style="width:300px">
            <div class="progress-bar progress-bar-info progress-bar-striped"
-             role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+             role="progressbar" attr.aria-valuenow="{{progressUBILLoft.percentage}}"
                aria-valuemin="0" aria-valuemax="100"
-               [ngStyle]="{width:progress.percentage+'%'}">
-               {{progress.percentage}}%
+               [ngStyle]="{width:progressUBILLoft.percentage+'%'}">
+               {{progressUBILLoft.percentage}}%
              </div>
          </div>
        </ion-col>
@@ -44,10 +44,10 @@
        <ion-col>
          <div class="progress" style="width:300px">
            <div class="progress-bar progress-bar-info progress-bar-striped"
-             role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+             role="progressbar" attr.aria-valuenow="{{progressCustomerSignature.percentage}}"
                aria-valuemin="0" aria-valuemax="100"
-               [ngStyle]="{width:progress.percentage+'%'}">
-               {{progress.percentage}}%
+               [ngStyle]="{width:progressCustomerSignature.percentage+'%'}">
+               {{progressCustomerSignature.percentage}}%
              </div>
          </div>
        </ion-col>
@@ -70,10 +70,10 @@
        <ion-col>
          <div class="progress" style="width:300px">
            <div class="progress-bar progress-bar-info progress-bar-striped"
-             role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+             role="progressbar" attr.aria-valuenow="{{progressFloorPlan.percentage}}"
                aria-valuemin="0" aria-valuemax="100"
-               [ngStyle]="{width:progress.percentage+'%'}">
-               {{progress.percentage}}%
+               [ngStyle]="{width:progressFloorPlan.percentage+'%'}">
+               {{progressFloorPlan.percentage}}%
              </div>
          </div>
        </ion-col>
@@ -87,7 +87,7 @@
        <ion-col>
          <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor('EPOP')">Upload</button>
 
        </ion-col>
      </ion-row>
@@ -96,10 +96,10 @@
        <ion-col>
          <div class="progress" style="width:300px">
            <div class="progress-bar progress-bar-info progress-bar-striped"
-             role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+             role="progressbar" attr.aria-valuenow="{{progressTenancyAgreement.percentage}}"
                aria-valuemin="0" aria-valuemax="100"
-               [ngStyle]="{width:progress.percentage+'%'}">
-               {{progress.percentage}}%
+               [ngStyle]="{width:progressTenancyAgreement.percentage+'%'}">
+               {{progressTenancyAgreement.percentage}}%
              </div>
          </div>
        </ion-col>
@@ -113,7 +113,7 @@
        <ion-col>
          <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor('Floor Plan')">Upload</button>
 
        </ion-col>
      </ion-row>
@@ -122,10 +122,10 @@
        <ion-col>
          <div class="progress" style="width:300px">
            <div class="progress-bar progress-bar-info progress-bar-striped"
-             role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+             role="progressbar" attr.aria-valuenow="{{progressLandLordPerm.percentage}}"
                aria-valuemin="0" aria-valuemax="100"
-               [ngStyle]="{width:progress.percentage+'%'}">
-               {{progress.percentage}}%
+               [ngStyle]="{width:progressLandLordPerm.percentage+'%'}">
+               {{progressLandLordPerm.percentage}}%
              </div>
          </div>
        </ion-col>
@@ -139,7 +139,7 @@
        <ion-col>
          <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor('Tenancy Agreement')">Upload</button>
 
        </ion-col>
      </ion-row>
@@ -148,10 +148,10 @@
        <ion-col>
          <div class="progress" style="width:300px">
            <div class="progress-bar progress-bar-info progress-bar-striped"
-             role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+             role="progressbar" attr.aria-valuenow="{{progressLandLordPerm.percentage}}"
                aria-valuemin="0" aria-valuemax="100"
-               [ngStyle]="{width:progress.percentage+'%'}">
-               {{progress.percentage}}%
+               [ngStyle]="{width:progressLandLordPerm.percentage+'%'}">
+               {{progressLandLordPerm.percentage}}%
              </div>
          </div>
        </ion-col>
@@ -165,7 +165,7 @@
        <ion-col>
          <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor('Landlord Permission')">Upload</button>
 
        </ion-col>
      </ion-row>
