@@ -29,7 +29,7 @@ export class SurveyorFormPage{
   }
 
   isViewed(test: string){
-    if(test === 'esh'){
+    if(test === 'loft'){
       return true;
     }
   }
