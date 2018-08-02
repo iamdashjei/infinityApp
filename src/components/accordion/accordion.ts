@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit, Renderer, Input  } from '@angular/core';
 
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the AccordionComponent component.
  *
@@ -18,7 +19,7 @@ export class AccordionComponent  implements OnInit{
 
   icon: string = "arrow-forward";
 
-  constructor(public renderer: Renderer) {}
+  constructor(public renderer: Renderer, private storage: Storage) {}
 
   ngOnInit(){
     console.log(this.genFormContent.nativeElement);
@@ -37,6 +38,21 @@ export class AccordionComponent  implements OnInit{
 
     this.accordionExpanded = !this.accordionExpanded;
     this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
+  }
+
+  public setKey(settingName, value){
+    console.log("Saving Key For: " + settingName);
+    console.log("Saving Value:" + value);
+    return this.storage.set(settingName, value);
+  }
+
+  public async getKey(settingName){
+    console.log("Getting Key For: " + settingName);
+    return await this.storage.get(settingName);
+  }
+
+  prompt() {
+    console.log("Bedroom Dropdown");
   }
 
 

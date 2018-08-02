@@ -20,6 +20,7 @@ import { UploadFileServiceProvider } from '../providers/upload-file-service/uplo
 
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { SignaturePage } from '../pages/signature/signature';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 
@@ -36,7 +37,8 @@ import { SignaturePage } from '../pages/signature/signature';
     AngularFireModule.initializeApp(FIREBASE_CONFIG.firebase),
     AngularFireDatabaseModule,
     IonicModule.forRoot(MyApp),
-    SignaturePadModule
+    SignaturePadModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

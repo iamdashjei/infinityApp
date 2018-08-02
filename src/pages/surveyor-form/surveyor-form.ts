@@ -16,6 +16,7 @@ import { SignaturePage } from '../signature/signature';
 export class SurveyorFormPage{
   public signatureImage: any;
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalController: ModalController) {
     this.signatureImage = navParams.get('signatureImage');
   }
@@ -25,6 +26,12 @@ export class SurveyorFormPage{
        let modal = this.modalController.create(SignaturePage);
     modal.present();
     }, 300);
+  }
+
+  isViewed(test: string){
+    if(test === 'esh'){
+      return true;
+    }
   }
 
 

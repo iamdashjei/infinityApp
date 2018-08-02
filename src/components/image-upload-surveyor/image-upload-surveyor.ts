@@ -19,13 +19,6 @@ export class ImageUploadSurveyorComponent implements OnInit{
   @Input('title') title: string;
 
   public  anArray: any=[];
-  public signaturePadOptions: Object = {
-  'minWidth': 2,
-  'canvasWidth': 400,
-  'canvasHeight': 200,
-  'backgroundColor': '#f6fbff',
-  'penColor': '#666a73'
-   };
 
    selectedFiles: FileList;
    currentFileUpload: FileUpload;
@@ -37,18 +30,7 @@ export class ImageUploadSurveyorComponent implements OnInit{
 
   icon: string = "arrow-forward";
 
-  constructor(public renderer: Renderer,  private uploadService: UploadFileServiceProvider) {}
-
-  drawComplete() {
-   this.isDrawing = false;
-  }
-
-  drawStart() {
-   this.isDrawing = true;
-  }
-
-  clearPad() {
-    this.signaturePad.clear();
+  constructor(public renderer: Renderer,  private uploadService: UploadFileServiceProvider) {
   }
 
   ngOnInit(){

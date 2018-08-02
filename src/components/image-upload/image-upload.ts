@@ -55,5 +55,4 @@ export class ImageUploadComponent implements OnInit{
     this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
   }
 
-
 }
