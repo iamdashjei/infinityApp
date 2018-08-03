@@ -12,30 +12,6 @@
   </ion-card-header>
 
   <ion-card-content #surveyorForms>
-    <!-- <ion-grid>
-      <ion-row *ngFor="let att of anArray; let idx = index">
-        <ion-col>
-          <div *ngIf="currentFileUpload" class="progress" style="width:400px">
-            <div class="progress-bar progress-bar-info progress-bar-striped"
-              role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
-                aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{width:progress.percentage+'%'}">
-                {{progress.percentage}}%
-              </div>
-          </div>
-        </ion-col>
-        <ion-col>
-          <ion-label color="primary">Bedroom</ion-label>
-        </ion-col>
-
-        <ion-col>
-          <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
-
-          <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
-
-        </ion-col>
-      </ion-row>
-    </ion-grid> -->
 
     <!-- <ion-item *ngFor="let att of anArray; let idx = index">
      <ion-label color="primary">{{att.label}}{{idx+1}}</ion-label>
@@ -50,7 +26,7 @@
      </ion-item>
    </ion-card> -->
    <ion-grid>
-     <ion-row>
+     <!-- <ion-row>
        <ion-col>
          <div class="progress" style="width:300px">
            <div class="progress-bar progress-bar-info progress-bar-striped"
@@ -74,7 +50,35 @@
          <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
 
        </ion-col>
-     </ion-row>
+     </ion-row> -->
+
+
+       <ion-row *ngFor="let item of bedroom; let i = index">
+       <ion-col>
+         <div class="progress" style="width:300px">
+           <div class="progress-bar progress-bar-info progress-bar-striped"
+             role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+               aria-valuemin="0" aria-valuemax="100"
+               [ngStyle]="{width:progress.percentage+'%'}">
+               {{progress.percentage}}%
+             </div>
+         </div>
+       </ion-col>
+       <ion-col>
+        <ion-label color="danger">Not yet Uploaded</ion-label>
+       </ion-col>
+       <ion-col>
+         <ion-label color="primary" >Bedroom - {{ i + 1 }}</ion-label>
+       </ion-col>
+
+       <ion-col>
+         <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
+
+         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
+
+       </ion-col>
+      </ion-row>
+
 
      <ion-row>
        <ion-col>

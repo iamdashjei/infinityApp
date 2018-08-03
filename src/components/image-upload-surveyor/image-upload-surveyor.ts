@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit, Renderer, Input  } from '@angular/core';
 import { UploadFileServiceProvider } from '../../providers/upload-file-service/upload-file-service';
 import { FileUpload } from '../../providers/upload-file-service/fileupload';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the ImageUploadSurveyorComponent component.
  *
@@ -27,11 +28,11 @@ export class ImageUploadSurveyorComponent implements OnInit{
    accordionExpanded = false;
    signature = '';
    isDrawing = false;
+   bedroom: any;
 
   icon: string = "arrow-forward";
 
-  constructor(public renderer: Renderer,  private uploadService: UploadFileServiceProvider) {
-  }
+  constructor(public renderer: Renderer,  private uploadService: UploadFileServiceProvider, private storage: Storage) {}
 
   ngOnInit(){
     console.log(this.surveyorFormContent.nativeElement);
@@ -49,6 +50,8 @@ export class ImageUploadSurveyorComponent implements OnInit{
 
     this.accordionExpanded = !this.accordionExpanded;
     this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
+    //this.getKey('Bedrooms');
+
   }
 
   selectFileSurveyor(event){
@@ -69,6 +72,21 @@ export class ImageUploadSurveyorComponent implements OnInit{
   Add(){
     this.anArray.push({'value':''});
   }
+
+  public setKey(settingName, value){
+    return this.storage.set(settingName, value);
+  }
+
+  public async getKey(settingName){
+    // Or to get a key/value pair
+
+    this.storage.get(settingName).then((val) => {
+      this.bedroom = Array(Number(val)).fill().map((x,i)=>i);
+      console.log('Bedroom value: ', this.bedroom);
+    });
+
+  }
+
 
 
 }

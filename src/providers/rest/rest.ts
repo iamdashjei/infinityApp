@@ -40,4 +40,8 @@ export class RestProvider {
   return Observable.throw(errMsg);
   }
 
+  // private handleAuthentication () {
+  //
+  // }
+
 }
