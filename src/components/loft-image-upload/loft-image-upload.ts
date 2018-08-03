@@ -19,10 +19,23 @@ export class LoftImageUploadComponent implements OnInit{
     @ViewChild("loftsurveyorForms") loftsurveyorFormContent: any;
     @Input('title') title: string;
 
-    selectedFiles: FileList;
-    currentFileUpload: FileUpload;
+    selectedFilesUBILLoft: FileList;
+    selectedFilesCustomerSignature: FileList;
+    selectedFilesEPOP: FileList;
+    selectedFilesFloorPlan: FileList;
+    selectedFilesTenancyAgreement: FileList;
+    selectedFilesLandlordPerm: FileList;
+
+    currentFileUploadUBILLoft: FileUpload;
+    currentFileUploadCustomerSignature: FileUpload;
+    currentFileUploadEPOP: FileUpload;
+    currentFileUploadFloorPlan: FileUpload;
+    currentFileUploadTenancyAgreement: FileUpload;
+    currentFileUploadLandlordPerm: FileUpload;
+
     progressUBILLoft: {percentage: number} = {percentage: 0};
     progressCustomerSignature: {percentage: number} = {percentage: 0};
+    progressEPOP: {percentage: number} = {percentage: 0};
     progressFloorPlan: {percentage: number} = {percentage: 0};
     progressTenancyAgreement: {percentage: number} = {percentage: 0};
     progressLandLordPerm: {percentage: number} = {percentage: 0};
@@ -55,14 +68,58 @@ export class LoftImageUploadComponent implements OnInit{
       this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
     }
 
-    selectFileLoftSurveyor(event){
-          this.selectedFiles = event.target.files;
+    selectFileLoftSurveyor(event, targetFile: string){
+    
+      if(targetFile == 'UBIL'){
+        this.selectedFilesUBILLoft = event.target.files;
+      } else if (targetFile == 'CustomerSignature') {
+        this.selectedFilesCustomerSignature = event.target.files;
+      } else if (targetFile == 'EPOP') {
+        this.selectedFilesEPOP = event.target.files;
+      } else if (targetFile == 'FloorPlan') {
+        this.selectedFilesFloorPlan = event.target.files;
+      } else if (targetFile == 'Tenancy Agreement') {
+        this.selectedFilesTenancyAgreement = event.target.files;
+      } else if (targetFile == 'LandlordPerm') {
+        this.selectedFilesLandlordPerm = event.target.files;
+      }
+
     }
 
+
     uploadLoftSurveyor(input: string){
-      const file = this.selectedFiles.item(0);
-      this.currentFileUpload = new FileUpload(file);
-      this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
+
+      if(input == 'UBIL') {
+          const fileUBIL = this.selectedFilesUBILLoft.item(0);
+          this.currentFileUploadUBILLoft = new FileUpload(fileUBIL);
+          this.uploadService.pushFileToStorage(this.currentFileUploadUBILLoft, this.progressUBILLoft);
+
+      } else if(input == 'CustSignature'){
+          const fileCustomerSignature = this.selectedFilesCustomerSignature.item(0);
+          this.currentFileUploadCustomerSignature = new FileUpload(fileCustomerSignature);
+          this.uploadService.pushFileToStorage(this.currentFileUploadCustomerSignature, this.progressCustomerSignature);
+
+      } else if (input == 'EPOP') {
+          const fileEPOP = this.selectedFilesEPOP.item(0);
+          this.currentFileUploadEPOP = new FileUpload(fileEPOP);
+          this.uploadService.pushFileToStorage(this.currentFileUploadEPOP, this.progressEPOP);
+
+      } else if (input == 'Floor Plan') {
+          const fileFloorPlan = this.selectedFilesFloorPlan.item(0);
+          this.currentFileUploadFloorPlan = new FileUpload(fileFloorPlan);
+          this.uploadService.pushFileToStorage(this.currentFileUploadFloorPlan, this.progressFloorPlan);
+
+      } else if (input == 'Tenancy Agreement') {
+          const fileTenancyAgreement = this.selectedFilesTenancyAgreement.item(0);
+          this.currentFileUploadTenancyAgreement = new FileUpload(fileTenancyAgreement);
+          this.uploadService.pushFileToStorage(this.currentFileUploadTenancyAgreement, this.progressTenancyAgreement);
+
+      } else if (input == 'Landlord Permission') {
+          const fileLandlordPerm = this.selectedFilesLandlordPerm.item(0);
+          this.currentFileUploadLandlordPerm = new FileUpload(fileLandlordPerm);
+          this.uploadService.pushFileToStorage(this.currentFileUploadLandlordPerm, this.progressLandLordPerm);
+
+      }
     }
 
 }

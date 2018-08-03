@@ -33,9 +33,9 @@
        </ion-col>
 
        <ion-col>
-         <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
+         <ion-label color="primary"> <input type="file" (change)="selectFileLoftSurveyor($event, 'UBIL')"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFilesUBILLoft" (click)="uploadLoftSurveyor('UBIL')">Upload</button>
 
        </ion-col>
      </ion-row>
@@ -59,9 +59,9 @@
        </ion-col>
 
        <ion-col>
-         <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
+         <ion-label color="primary"> <input type="file" (change)="selectFileLoftSurveyor($event, 'CustomerSignature')"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor()">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFilesCustomerSignature" (click)="uploadLoftSurveyor('CustSignature')">Upload</button>
 
        </ion-col>
      </ion-row>
@@ -85,9 +85,9 @@
        </ion-col>
 
        <ion-col>
-         <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
+         <ion-label color="primary"> <input type="file" (change)="selectFileLoftSurveyor($event, 'EPOP')"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor('EPOP')">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFilesEPOP" (click)="uploadLoftSurveyor('EPOP')">Upload</button>
 
        </ion-col>
      </ion-row>
@@ -111,9 +111,9 @@
        </ion-col>
 
        <ion-col>
-         <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
+         <ion-label color="primary"> <input type="file" (change)="selectFileLoftSurveyor($event, 'FloorPlan')"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor('Floor Plan')">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFilesFloorPlan" (click)="uploadLoftSurveyor('Floor Plan')">Upload</button>
 
        </ion-col>
      </ion-row>
@@ -137,9 +137,9 @@
        </ion-col>
 
        <ion-col>
-         <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
+         <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event, 'Tenancy Agreement')"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor('Tenancy Agreement')">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFilesTenancyAgreement" (click)="uploadLoftSurveyor('Tenancy Agreement')">Upload</button>
 
        </ion-col>
      </ion-row>
@@ -163,9 +163,9 @@
        </ion-col>
 
        <ion-col>
-         <ion-label color="primary"> <input type="file" (change)="selectFileSurveyor($event)"/></ion-label>
+         <ion-label color="primary"> <input type="file" (change)="selectFileLoftSurveyor($event, 'LandlordPerm')"/></ion-label>
 
-         <button ion-button class="primary" [disabled]="!selectedFiles" (click)="uploadSurveyor('Landlord Permission')">Upload</button>
+         <button ion-button class="primary" [disabled]="!selectedFilesLandlordPerm" (click)="uploadLoftSurveyor('Landlord Permission')">Upload</button>
 
        </ion-col>
      </ion-row>
