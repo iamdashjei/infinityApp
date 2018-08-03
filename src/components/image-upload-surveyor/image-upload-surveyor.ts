@@ -50,7 +50,7 @@ export class ImageUploadSurveyorComponent implements OnInit{
 
     this.accordionExpanded = !this.accordionExpanded;
     this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
-    //this.getKey('Bedrooms');
+    this.getKey('Bedrooms');
 
   }
 
@@ -77,14 +77,18 @@ export class ImageUploadSurveyorComponent implements OnInit{
     return this.storage.set(settingName, value);
   }
 
-  public async getKey(settingName){
+  public getKey(settingName){
     // Or to get a key/value pair
 
     this.storage.get(settingName).then((val) => {
-      this.bedroom = Array(Number(val)).fill().map((x,i)=>i);
+    this.bedroom = Number(val);
       console.log('Bedroom value: ', this.bedroom);
     });
 
+  }
+
+  forLoopArray(elements: number): Array<any> {
+        return new Array(elements);
   }
 
 
