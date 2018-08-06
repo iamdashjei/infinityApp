@@ -22,6 +22,10 @@ export class ImageUploadSurveyorComponent implements OnInit{
   public  anArray: any=[];
 
    selectedFiles: FileList;
+   selectedFilesBathroom: FileList;
+   selectedFilesLivingroom: FileList;
+   selectedFilesDiningroom: FileList;
+   seletedFilesHallway: FileList;
    currentFileUpload: FileUpload;
    progress: {percentage: number} = {percentage: 0};
    data = false;
