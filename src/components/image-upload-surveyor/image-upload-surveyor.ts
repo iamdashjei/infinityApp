@@ -68,15 +68,6 @@ export class ImageUploadSurveyorComponent implements OnInit{
     this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
   }
 
-  goTo(){
-    console.log('this.anArray', this.anArray);
-    this.data=true;
-  }
-
-  Add(){
-    this.anArray.push({'value':''});
-  }
-
   public setKey(settingName, value){
     return this.storage.set(settingName, value);
   }

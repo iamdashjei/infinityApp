@@ -4,7 +4,6 @@ import { DashboardPage } from './dashboard';
 import { ProgressBarComponent } from '../../components/progress-bar/progress-bar';
 import { TimeAgoPipe } from 'time-ago-pipe';
 
-
 @NgModule({
   declarations: [
     DashboardPage,
@@ -14,5 +13,8 @@ import { TimeAgoPipe } from 'time-ago-pipe';
   imports: [
     IonicPageModule.forChild(DashboardPage),
   ],
+  exports: [
+    DashboardPage
+  ]
 })
 export class DashboardPageModule {}

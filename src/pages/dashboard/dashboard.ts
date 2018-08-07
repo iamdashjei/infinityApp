@@ -1,8 +1,9 @@
 import { Component, ViewChild} from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
 import { Chart } from 'chart.js';
 import 'rxjs/add/operator/map';
 import { RestProvider } from '../../providers/rest/rest';
+import { Badge } from '@ionic-native/badge';
 
 
 /**
@@ -11,6 +12,7 @@ import { RestProvider } from '../../providers/rest/rest';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+
 
 @IonicPage()
 @Component({
@@ -26,8 +28,17 @@ export class DashboardPage {
   leads: any;
   errorMessage: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public rest: RestProvider) {
+  MENU = {
+    DEFAULT: 'menu-components',
+    MATERIAL: 'menu-material',
+    AVATAR: 'menu-avatar',
+    DARK: 'menu-dark',
+    RIGHT: 'menu-right',
+  };
 
+  constructor(private badge: Badge, public navCtrl: NavController, public navParams: NavParams, public rest: RestProvider, public menuCtrl: MenuController) {
+
+    this.menuCtrl.enable(true, 'menu-material');
   }
 
   ionViewDidLoad() {
@@ -67,6 +78,9 @@ export class DashboardPage {
    loadProgress() {
      return 90;
    }
+
+
+
 
 
 }

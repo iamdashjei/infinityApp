@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, Nav } from 'ionic-angular';
 
 
 @Component({
@@ -7,11 +7,24 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  @ViewChild(Nav) nav: Nav;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  pages: Array<{title: string, component: any}>;
+
+  rootPage = 'DashboardPage';
+
+  constructor(public navCtrl: NavController) {
+    this.pages = [
+      { title: 'Dashboard', component: 'DashboardPage'}
+    ];
+  }
 
   ionViewDidLoad(){
       console.log('ionViewDidLoad HomePage');
+  }
+
+  openPage(page) {
+    this.nav.setRoot(page.component);
   }
 
 }
