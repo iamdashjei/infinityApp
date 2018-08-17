@@ -37,10 +37,10 @@ export class DashboardPage {
   };
 
   constructor(private badge: Badge, public navCtrl: NavController, public navParams: NavParams, public rest: RestProvider, public menuCtrl: MenuController) {
-
     this.menuCtrl.enable(true, 'menu-material');
   }
 
+  // Update Chart Dashboard
   ionViewDidLoad() {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
 
@@ -67,7 +67,7 @@ export class DashboardPage {
 
       this.getLeads();
   }
-
+  // Get Leads from the CRM
   getLeads() {
    this.rest.getLeads()
       .subscribe(
@@ -79,8 +79,40 @@ export class DashboardPage {
      return 90;
    }
 
+   // Request Permission
+   async requestPermission() {
+     try {
+       let hasPermission = await this.badge.hasPermission();
+       console.log(hasPermission);
+       if (!hasPermission) {
+         let permission = await this.badge.requestPermission();
+         console.log(permission);
+       }
+     } catch (e) {
+       console.error(e);
+    }
+  }
 
+  // Set Badge Count
+  setBadges(badgeNumber: number) {
+    console.log("Set Badges " + badgeNumber);
+    this.badge.set(badgeNumber);
+  }
 
+  // Get Badge Count
+  getBadges() {
+    this.badge.get();
+  }
+
+  // Increase Badge Count
+  increaseBadges(badgeNumber: number) {
+      this.badge.increase(badgeNumber);
+  }
+
+  // Clear Badges
+  clearBadges(){
+    this.badge.clear();
+  }
 
 
 }

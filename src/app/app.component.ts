@@ -1,11 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav, MenuController } from 'ionic-angular';
+import { Platform, Nav, MenuController, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { SurveyorFormPage } from '../pages/surveyor-form/surveyor-form';
 import { Subject } from 'rxjs';
 import { AppState } from './app.global';
+import { FcmProvider } from '../providers/fcm/fcm';
+import { tap } from 'rxjs/operators';
+
 
 
 @Component({
@@ -26,7 +29,9 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public global: AppState,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    public fcm:     FcmProvider,
+    public toastCtrl: ToastController
   ) {
     this.initializeApp();
 
@@ -64,6 +69,9 @@ export class MyApp {
     this.statusBar.styleDefault();
     this.splashScreen.hide();
     this.menuCtrl.enable(false, 'right');
+
+
+
     });
   }
 

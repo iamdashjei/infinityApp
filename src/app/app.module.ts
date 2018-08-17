@@ -37,6 +37,10 @@ import { CardIO } from '@ionic-native/card-io';
 
 import { Badge } from '@ionic-native/badge';
 
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { Firebase } from '@ionic-native/firebase';
+import { FcmProvider } from '../providers/fcm/fcm';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -56,6 +60,7 @@ import { Badge } from '@ionic-native/badge';
     HttpClientModule,
     AngularFireModule.initializeApp(FIREBASE_CONFIG.firebase),
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
     IonicModule.forRoot(MyApp),
     SignaturePadModule,
     IonicStorageModule.forRoot()
@@ -78,9 +83,11 @@ import { Badge } from '@ionic-native/badge';
     Badge,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
+    Firebase,
     UploadFileServiceProvider,
     UtilProvider,
-    NativeGoogleMapsProvider
+    NativeGoogleMapsProvider,
+    FcmProvider
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
 })
