@@ -24,6 +24,7 @@ export class AccordionEshBoilerComponent {
     this.renderer.setElementStyle(this.eshboilerFormContent.nativeElement, "webkitTransition", "max-height 1200ms, padding 500ms");
   }
 
+  // Toggle Form for ESH - Boiler
   toggleAccordionESHBoiler() {
     if(this.accordionExpanded){
       this.renderer.setElementStyle(this.eshboilerFormContent.nativeElement, "max-height", "0px");

@@ -70,9 +70,7 @@ export class MyApp {
     this.splashScreen.hide();
     this.menuCtrl.enable(false, 'right');
 
-
-
-    });
+  });
   }
 
 

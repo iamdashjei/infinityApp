@@ -40,12 +40,14 @@ export class AccordionComponent  implements OnInit{
     this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
   }
 
+  // Set Key For Specific Data
   public setKey(settingName, value){
     console.log("Saving Key For: " + settingName);
     console.log("Saving Value:" + value);
     return this.storage.set(settingName, value);
   }
 
+  // Get Key From Saved Key
   public async getKey(settingName){
     console.log("Getting Key For: " + settingName);
     return await this.storage.get(settingName);

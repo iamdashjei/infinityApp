@@ -21,7 +21,7 @@ export class LoginPage {
       console.log('ionViewDidLoad LoginPage');
   }
 
-
+  // Login for OTP 
   login() {
     (<any>window).AccountKitPlugin.loginWithPhoneNumber({
       useAccessToken: true,

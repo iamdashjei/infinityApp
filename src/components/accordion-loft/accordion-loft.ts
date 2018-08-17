@@ -24,6 +24,7 @@ export class AccordionLoftComponent implements OnInit{
     this.renderer.setElementStyle(this.loftFormContent.nativeElement, "webkitTransition", "max-height 3200ms, padding 500ms");
   }
 
+  // Toggle Form for Loft
   toggleAccordionLoft() {
     if(this.accordionExpanded){
       this.renderer.setElementStyle(this.loftFormContent.nativeElement, "max-height", "0px");

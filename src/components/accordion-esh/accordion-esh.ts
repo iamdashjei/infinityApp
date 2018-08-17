@@ -24,6 +24,8 @@ export class AccordionEshComponent {
     this.renderer.setElementStyle(this.eshFormContent.nativeElement, "webkitTransition", "max-height 1200ms, padding 500ms");
   }
 
+  
+  // Toggle Form For ESH
   toggleAccordionESH() {
     if(this.accordionExpanded){
       this.renderer.setElementStyle(this.eshFormContent.nativeElement, "max-height", "0px");

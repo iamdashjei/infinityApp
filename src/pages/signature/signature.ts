@@ -29,7 +29,7 @@ export class SignaturePage {
   }
 
 
-  //Other Functions
+  // Canvas Resize
   canvasResize() {
     let canvas = document.querySelector('canvas');
     this.signaturePad.set('minWidth', 1);
@@ -42,15 +42,18 @@ export class SignaturePage {
       this.canvasResize();
    }
 
+   // Signature Draw cancel
    drawCancel() {
      this.navCtrl.push(SurveyorFormPage);
    }
 
+   // Signature Draw Complete
     drawComplete() {
      this.signatureImage = this.signaturePad.toDataURL();
      this.navCtrl.push(SurveyorFormPage, {signatureImage: this.signatureImage});
    }
 
+   // Signature Draw Clear
    drawClear() {
      this.signaturePad.clear();
    }

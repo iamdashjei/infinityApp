@@ -24,6 +24,7 @@ export class AccordionBoilerComponent implements OnInit {
     this.renderer.setElementStyle(this.boilerFormContent.nativeElement, "webkitTransition", "max-height 1200ms, padding 500ms");
   }
 
+  // Toggle List For Boiler Form
   toggleAccordionBoiler() {
     if(this.accordionExpanded){
       this.renderer.setElementStyle(this.boilerFormContent.nativeElement, "max-height", "0px");

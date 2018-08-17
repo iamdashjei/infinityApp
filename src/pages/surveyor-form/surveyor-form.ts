@@ -21,6 +21,7 @@ export class SurveyorFormPage{
     this.signatureImage = navParams.get('signatureImage');
   }
 
+  // For Signature Drawpad
   openSignatureModel(){
     setTimeout(() => {
        let modal = this.modalController.create(SignaturePage);
@@ -28,6 +29,7 @@ export class SurveyorFormPage{
     }, 300);
   }
 
+  // View Restriction for Forms. etc.
   isViewed(test: string){
     if(test === 'loft'){
       return true;

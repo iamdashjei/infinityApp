@@ -25,7 +25,7 @@ export class AccordionCavitySolidWallComponent {
     this.renderer.setElementStyle(this.cavitysolidwallContent.nativeElement, "webkitTransition", "max-height 3000ms, padding 500ms");
   }
 
-
+  // Toggle Form For Cavity Solid Wall
   toggleAccordionCavitySolidWall() {
       if(this.accordionExpanded){
         this.renderer.setElementStyle(this.cavitysolidwallContent.nativeElement, "max-height", "0px");
