@@ -17,6 +17,7 @@ import { SurveyorFormPage } from '../surveyor-form/surveyor-form';
 export class SignaturePage {
   @ViewChild(SignaturePad) public signaturePad : SignaturePad;
 
+  // Signature Pad Options
   public signaturePadOptions : Object = {
     'minWidth': 2,
     'canvasWidth': 340,

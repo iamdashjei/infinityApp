@@ -13,7 +13,6 @@ import { map, catchError } from 'rxjs/operators';
 export class RestProvider {
   private apiUrl = 'http://devcrm.infinityenergyorganisation.co.uk/fetch-data/surveyor';
   constructor(public http: HttpClient) {
-    console.log('Hello RestProvider Provider');
   }
 
   // Get Leads From CRM assigned
