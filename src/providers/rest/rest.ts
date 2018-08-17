@@ -16,6 +16,7 @@ export class RestProvider {
     console.log('Hello RestProvider Provider');
   }
 
+  // Get Leads From CRM assigned
   getLeads(): Observable<{}> {
   return this.http.get(this.apiUrl).pipe(
     map(this.extractData),
@@ -23,6 +24,7 @@ export class RestProvider {
   );
   }
 
+  // Extract Data From CRM
   private extractData(res: Response) {
   let body = res;
   return body || { };
@@ -40,8 +42,6 @@ export class RestProvider {
   return Observable.throw(errMsg);
   }
 
-  // private handleAuthentication () {
-  //
-  // }
+
 
 }

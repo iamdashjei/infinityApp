@@ -9,6 +9,11 @@ import { FileUpload } from './fileupload';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+
+/*
+  Upload File Service for File/Image Upload Module
+
+*/
 @Injectable()
 export class UploadFileServiceProvider {
 
