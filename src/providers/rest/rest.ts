@@ -30,6 +30,7 @@ export class RestProvider {
   return body || { };
   }
 
+  // Hanlde Error if no data found
   private handleError (error: Response | any) {
   let errMsg: string;
   if (error instanceof Response) {

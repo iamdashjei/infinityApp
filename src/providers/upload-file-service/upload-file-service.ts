@@ -43,7 +43,8 @@ export class UploadFileServiceProvider {
       }
     );
   }
-
+  
+  // Save File Data
   private saveFileData(fileUpload: FileUpload) {
     this.db.list(`${this.basePath}/`).push(fileUpload);
   }
