@@ -14,6 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'verification.html',
 })
 export class VerificationPage {
+  
+  verificationCode: string;
+  user: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -21,5 +24,6 @@ export class VerificationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad VerificationPage');
   }
+
 
 }

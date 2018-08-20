@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import * as firebase from 'firebase';
 /**
  * Generated class for the LoginPage page.
  *
@@ -14,7 +14,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  phone: number;
+  verificationId: any;
+  code: string = "";
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad(){
@@ -34,5 +35,19 @@ export class LoginPage {
       }, (err) => {
         alert(err);
     })
+  }
+
+  sendLoginCode() {
+    (<any>window).FirebasePlugin.verifyPhoneNumber("+639051583899", 60, (credential) => {
+      alert("OTP Sent Successfully!");
+      console.log(credential);
+      this.verificationId = credential.verificationId;
+    }, function( error ) {
+      console.error(error);
+    });
+  }
+
+  verify(){
+
   }
 }

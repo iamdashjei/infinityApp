@@ -7,12 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>verification</ion-title>
+    <ion-title>Verify Your Code</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+<ion-input type="text" placeholder="Verification code" [(ngModel)]=”code”></ion-input>
+<button ion-button block (click)="verify()"">Verify</button>
 </ion-content>
