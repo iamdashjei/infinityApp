@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { LoginPage } from '../pages/login/login';
 import { SurveyorFormPage } from '../pages/surveyor-form/surveyor-form';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -46,6 +47,7 @@ import { FcmProvider } from '../providers/fcm/fcm';
     SignaturePage,
     DashboardPage,
     SurveyorFormPage,
+    LoginPage,
     TimeAgoPipe,
     AccordionComponent,
     ImageUploadSurveyorComponent,
@@ -70,6 +72,7 @@ import { FcmProvider } from '../providers/fcm/fcm';
     SignaturePage,
     DashboardPage,
     SurveyorFormPage,
+    LoginPage,
   ],
   providers: [
     StatusBar,

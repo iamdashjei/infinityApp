@@ -14,14 +14,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  phone: number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad(){
       console.log('ionViewDidLoad LoginPage');
   }
 
-  // Login for OTP 
+  // Login for OTP
   login() {
     (<any>window).AccountKitPlugin.loginWithPhoneNumber({
       useAccessToken: true,

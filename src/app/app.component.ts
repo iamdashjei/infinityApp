@@ -3,6 +3,7 @@ import { Platform, Nav, MenuController, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { LoginPage } from '../pages/login/login';
 import { SurveyorFormPage } from '../pages/surveyor-form/surveyor-form';
 import { Subject } from 'rxjs';
 import { AppState } from './app.global';
@@ -17,7 +18,7 @@ import { tap } from 'rxjs/operators';
 export class MyApp {
    @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = DashboardPage;
+  rootPage: any = LoginPage;
   activePage = new Subject();
 
   pages: Array<{ title: string, component: any, active: boolean, icon: string}>;

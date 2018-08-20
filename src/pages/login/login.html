@@ -14,7 +14,7 @@
   <ion-row class="logo-row">
     <ion-col></ion-col>
     <ion-col width-80>
-        <img src="assets/imgs/300x200.png"/>
+        <img src="assets/imgs/infinity512.png"/>
     </ion-col>
     <ion-col></ion-col>
   </ion-row>
@@ -27,7 +27,10 @@
             <ion-list center>
 
               <ion-item>
-                <h4>Login with your phone</h4>
+                <ion-input type="text" placeholder="Username"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="text" placeholder="Mobile Number" [(ngModel)]="phone"></ion-input>
               </ion-item>
 
           </ion-list>
