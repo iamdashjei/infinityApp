@@ -30,11 +30,10 @@ export class MyApp {
     public splashScreen: SplashScreen,
     public global: AppState,
     public menuCtrl: MenuController,
-    public fcm:     FcmProvider,
-    public toastCtrl: ToastController
+    // public fcm:     FcmProvider,
+    // public toastCtrl: ToastController
   ) {
     this.initializeApp();
-
     this.rightMenuItems = [
       { icon: 'home', active: true },
       { icon: 'alarm', active: false },
@@ -77,6 +76,11 @@ export class MyApp {
   openPage(page) {
     this.nav.setRoot(page.component);
     this.activePage.next(page);
+  }
+
+  rightMenuClick(item) {
+  this.rightMenuItems.map(menuItem => menuItem.active = false);
+  item.active = true;
   }
 
 }

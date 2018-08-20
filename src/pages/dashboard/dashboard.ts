@@ -1,7 +1,6 @@
 import { Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
 import { Chart } from 'chart.js';
-import 'rxjs/add/operator/map';
 import { RestProvider } from '../../providers/rest/rest';
 import { Badge } from '@ionic-native/badge';
 

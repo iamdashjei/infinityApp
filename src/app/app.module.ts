@@ -28,8 +28,6 @@ import { AccordionComponent } from '../components/accordion/accordion';
 import { ImageUploadSurveyorComponent } from '../components/image-upload-surveyor/image-upload-surveyor';
 import { AccordionLoftComponent } from '../components/accordion-loft/accordion-loft';
 import { LoftImageUploadComponent } from '../components/loft-image-upload/loft-image-upload';
-import { UtilProvider } from '../providers/util/util';
-import { NativeGoogleMapsProvider } from '../providers/native-google-maps/native-google-maps';
 
 
 import { AppState } from './app.global';
@@ -62,8 +60,8 @@ import { FcmProvider } from '../providers/fcm/fcm';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     IonicModule.forRoot(MyApp),
-    SignaturePadModule,
-    IonicStorageModule.forRoot()
+    SignaturePadModule, // Signature Pad (E-Signature)
+    IonicStorageModule.forRoot() // Ionic Storage Local (Phone)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -84,8 +82,6 @@ import { FcmProvider } from '../providers/fcm/fcm';
     RestProvider,
     Firebase,
     UploadFileServiceProvider,
-    UtilProvider,
-    NativeGoogleMapsProvider,
     FcmProvider
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
