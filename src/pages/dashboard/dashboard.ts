@@ -28,6 +28,7 @@ export class DashboardPage {
   leads: any;
   errorMessage: string;
 
+  // Dashboard Custom Menu
   MENU = {
     DEFAULT: 'menu-components',
     MATERIAL: 'menu-material',

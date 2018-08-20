@@ -34,6 +34,7 @@ export class CavityWallComponentUploadComponent implements OnInit{
     console.log(this.cwsurveyorFormContent.nativeElement);
     this.renderer.setElementStyle(this.cwsurveyorFormContent.nativeElement, "webkitTransition", "max-height 3200ms, padding 500ms");
   }
+  
   toggleAccordionCWSurveyor() {
     if(this.accordionExpanded){
       this.renderer.setElementStyle(this.cwsurveyorFormContent.nativeElement, "max-height", "0px");
@@ -46,10 +47,13 @@ export class CavityWallComponentUploadComponent implements OnInit{
     this.accordionExpanded = !this.accordionExpanded;
     this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
   }
+
+  // This will select file Cavity Wall Surveyor
   selectFileCWSurveyor(event){
         this.selectedFiles = event.target.files;
   }
 
+  // Upload Cavity Wall Image Upload Surveyor
   uploadCWSurveyor(){
     const file = this.selectedFiles.item(0);
     this.currentFileUpload = new FileUpload(file);

@@ -7,7 +7,9 @@ import { FileUpload } from '../../providers/upload-file-service/fileupload';
  *
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
+ * Image Upload for <Main Form>
  */
+
 @Component({
   selector: 'image-upload',
   templateUrl: 'image-upload.html'
@@ -49,6 +51,7 @@ export class ImageUploadComponent implements OnInit{
         this.selectedFiles = event.target.files;
   }
 
+  // Upload Files of Main Forms (Surveyor)
   upload(){
     const file = this.selectedFiles.item(0);
     this.currentFileUpload = new FileUpload(file);

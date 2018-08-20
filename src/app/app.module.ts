@@ -64,7 +64,6 @@ import { FcmProvider } from '../providers/fcm/fcm';
     IonicModule.forRoot(MyApp),
     SignaturePadModule,
     IonicStorageModule.forRoot()
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
