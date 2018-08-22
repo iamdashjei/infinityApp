@@ -51,7 +51,6 @@
     "cordova-plugin-file": "^6.0.1",
     "cordova-plugin-file-transfer": "^1.7.1",
     "cordova-plugin-firebase": "^1.0.5",
-    "cordova-plugin-firebase-authentication": "^1.0.1",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
     "cordova-plugin-ionic-webview": "^1.2.1",
     "cordova-plugin-screen-orientation": "^3.0.1",
@@ -101,10 +100,7 @@
       "cordova-plugin-file": {},
       "cordova-sqlite-storage": {},
       "cordova-plugin-android-permissions": {},
-      "cordova-plugin-firebase": {},
-      "cordova-plugin-firebase-authentication": {
-        "FIREBASE_AUTH_VERSION": "16.0.+"
-      }
+      "cordova-plugin-firebase": {}
     },
     "platforms": [
       "android",

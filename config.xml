@@ -22,6 +22,7 @@
     <preference name="Orientation" value="landscape" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <resource-file src="google-services.json" target="google-services.json" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
@@ -98,9 +99,6 @@
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <plugin name="cordova-plugin-badge" spec="git+https://github.com/katzer/cordova-plugin-badge.git" />
     <plugin name="cordova-plugin-firebase" spec="^1.0.5" />
-    <plugin name="cordova-plugin-firebase-authentication" spec="^1.0.1">
-        <variable name="FIREBASE_AUTH_VERSION" value="16.0.+" />
-    </plugin>
     <engine name="android" spec="7.0.0" />
     <engine name="browser" spec="5.0.3" />
 </widget>

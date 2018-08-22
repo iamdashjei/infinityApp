@@ -37,16 +37,6 @@ export class LoginPage {
     })
   }
 
-  sendLoginCode() {
-    (<any>window).FirebasePlugin.verifyPhoneNumber("+639051583899", 60, (credential) => {
-      alert("OTP Sent Successfully!");
-      console.log(credential);
-      this.verificationId = credential.verificationId;
-    }, function( error ) {
-      console.error(error);
-    });
-  }
-
   verify(){
 
   }
